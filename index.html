@@ -27,28 +27,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais visível no modo escuro */
             border-radius: 10px;
         }
-        /* Estilo para a mensagem da página alternativa */
-.alternativa-page {
-    text-align: center;
-    padding: 15px;
-    margin: 20px auto;
-    background-color: #3e3e60; /* Fundo escuro sutil */
-    border: 1px solid #0f3460;
-    border-radius: 8px;
-    max-width: 800px;
-}
-
-.alternativa-page a {
-    color: #90d4ff; /* Cor de destaque azul claro */
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.alternativa-page a:hover {
-    color: white;
-    text-decoration: underline;
-}
 
         /* ----------------------------------------------------- */
         /* 2. ESTILO DO CABEÇALHO */
@@ -97,14 +75,14 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex; /* Para alinhar os itens do menu lado a lado */
-            justify-content: center; /* Centraliza os itens */
-            flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
         }
 
         .menu-navegacao li {
             margin: 0 15px;
-            margin-bottom: 10px; /* Para telas menores, se quebrar a linha */
+            margin-bottom: 10px; 
         }
 
         .menu-navegacao a {
@@ -121,13 +99,13 @@
             background-color: #0f3460;
             color: white;
         }
-
+        
         /* ----------------------------------------------------- */
         /* 4. ESTILO DOS TÍTULOS E LISTAS */
         /* ----------------------------------------------------- */
         h2 {
-            color: #90d4ff; /* Azul mais claro para os títulos no modo escuro */
-            border-bottom: 2px solid #0f3460; /* Linha de separação escura */
+            color: #90d4ff; 
+            border-bottom: 2px solid #0f3460; 
             padding-bottom: 5px;
             margin-top: 30px;
             margin-bottom: 15px;
@@ -145,7 +123,7 @@
         /* Estilo para a lista de informações básicas */
         .lista-basica li {
             padding: 5px 10px;
-            background-color: #3e3e60; /* Fundo dos itens da lista (escuro) */
+            background-color: #3e3e60; 
             border-radius: 5px;
             text-align: left;
         }
@@ -153,7 +131,7 @@
         /* Deixa o 'label' em negrito e com cor de destaque */
         .label {
             font-weight: bold;
-            color: #c0c0e0; /* Cor mais clara para labels */
+            color: #c0c0e0; 
             display: inline-block;
             width: 200px;
         }
@@ -166,7 +144,7 @@
         /* 5. ESTILO DOS HOBBIES (IMAGENS) */
         /* ----------------------------------------------------- */
         .lista-hobbies > li {
-            border-top: 1px dashed #4a4a75; /* Borda dashed mais escura */
+            border-top: 1px dashed #4a4a75; 
             padding-top: 15px;
             text-align: left;
         }
@@ -176,7 +154,7 @@
             justify-content: center; 
             gap: 15px;
             margin-top: 10px;
-            flex-wrap: wrap; /* Garante que as imagens quebrem linha se necessário */
+            flex-wrap: wrap; 
         }
 
         .galeria-hobby img {
@@ -188,26 +166,25 @@
         }
         
         /* ----------------------------------------------------- */
-        /* 6. ESTILO DA LISTA DE INTERESSES (AGORA COMO LISTA PADRÃO) */
+        /* 6. ESTILO DA LISTA DE INTERESSES */
         /* ----------------------------------------------------- */
         .lista-interesses {
-            /* Remove o flexbox para que os itens fiquem um abaixo do outro */
             display: block; 
             padding: 0;
-            list-style: none; /* Remove bolinhas */
+            list-style: none;
             margin-bottom: 30px;
-            text-align: left; /* Alinha o texto à esquerda */
+            text-align: left; 
         }
 
         .lista-interesses li {
-            background-color: #3e3e60; /* Fundo dos itens mais escuro */
-            color: #e0e0e0; /* Cor do texto clara */
+            background-color: #3e3e60; 
+            color: #e0e0e0; 
             padding: 10px 15px; 
-            margin: 5px 0; /* Espaço apenas vertical */
-            border-radius: 8px; /* Cantos arredondados */
+            margin: 5px 0; 
+            border-radius: 8px; 
             font-size: 1em; 
-            font-weight: normal; /* Normaliza o peso da fonte */
-            border-left: 5px solid #90d4ff; /* Borda colorida à esquerda para destaque */
+            font-weight: normal; 
+            border-left: 5px solid #90d4ff; 
         }
         
         /* ----------------------------------------------------- */
@@ -221,7 +198,7 @@
 
         .links-sociais a {
             display: inline-block; 
-            background-color: #007bff; /* Cor padrão para links sem cor específica */
+            background-color: #007bff; 
             color: white; 
             padding: 12px 25px; 
             border-radius: 8px; 
@@ -256,29 +233,29 @@
             max-width: 600px;
             margin: 20px auto; 
             padding: 20px;
-            border: 1px solid #4a4a75; /* Borda mais escura */
+            border: 1px solid #4a4a75; 
             border-radius: 8px;
-            background-color: #2a2a4a; /* Fundo do formulário mais escuro */
+            background-color: #2a2a4a; 
         }
 
         .form-contato input,
         .form-contato textarea {
             padding: 10px;
             margin-bottom: 15px;
-            border: 1px solid #4a4a75; /* Borda dos campos escura */
+            border: 1px solid #4a4a75; 
             border-radius: 4px;
             font-size: 1em;
             width: 100%; 
             box-sizing: border-box; 
-            background-color: #1a1a2e; /* Fundo dos campos de input */
-            color: #e0e0e0; /* Cor do texto nos campos */
+            background-color: #1a1a2e; 
+            color: #e0e0e0; 
         }
 
         .form-contato label {
             display: block; 
             margin-bottom: 5px;
             font-weight: bold;
-            color: #90d4ff; /* Cor clara para labels no formulário */
+            color: #90d4ff; 
         }
 
         .form-contato button {
@@ -298,13 +275,52 @@
         .form-contato button:hover {
             background-color: #1e7e34;
         }
+
+        /* ----------------------------------------------------- */
+        /* 9. ESTILO DO RODAPÉ (FOOTER) - NOVO */
+        /* ----------------------------------------------------- */
+        footer {
+            text-align: center; 
+            padding: 30px 0;
+            margin-top: 50px;
+            background-color: #0f3460; 
+            border-top: 1px solid #4a4a75;
+        }
+
+        .alternativa-page {
+            max-width: 800px;
+            margin: 0 auto 30px auto; /* Centraliza e adiciona margem inferior */
+            padding: 15px;
+            background-color: #1a1a2e; 
+            border: 1px solid #4a4a75;
+            border-radius: 8px;
+        }
+
+        .alternativa-page a {
+            color: #90d4ff; 
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .alternativa-page a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            color: #c0c0e0; 
+            font-size: 0.9em;
+            margin: 10px 0 0 0;
+        }
+
         /* Responsividade básica para imagens de hobbies */
         @media (max-width: 600px) {
             .galeria-hobby img {
-                width: 80%; /* Imagens de hobby maiores em telas pequenas */
+                width: 80%; 
             }
             .links-sociais a {
-                display: block; /* Botões de links sociais um abaixo do outro em telas pequenas */
+                display: block; 
                 margin: 10px auto;
                 max-width: 250px;
             }
@@ -328,11 +344,9 @@
             <li><a href="#hobbies">Hobbies</a></li>
             <li><a href="#redes-sociais">Redes Sociais</a></li>
             <li><a href="#fale-comigo">Fale Comigo</a></li>
-            <div class="alternativa-page">
-    <p>Quer ver a versão do meu código apenas com **HTML simples?**</p>
-    <a href="basico.html" target="_blank">Clique aqui para a versão HTML Básico</a>
-</div>
-        </ul>
+            <li><a href="#versao-html">Versão HTML</a></li>
+            
+            </ul>
     </nav>
 
     <main>
@@ -425,8 +439,17 @@
         </form>
 
     </main>
+    
+    <footer id="versao-html">
+        
+        <div class="alternativa-page">
+            <p>Quer ver a versão do meu código apenas com **HTML simples?**</p>
+            <a href="basico.html" target="_blank">Clique aqui para a versão HTML Básico</a>
+        </div>
+
+        <p class="copyright">
+            &copy; 2025 Direitos Reservados | Desenvolvido por José Nilmar Silvestre Jacinto
+        </p>
+    </footer>
 </body>
 </html>
-
-
-
