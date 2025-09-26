@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil - José Nilmar</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ----------------------------------------------------- */
+        /* 1. ESTILO GERAL E FUNDO (DARK MODE) */
+        /* ----------------------------------------------------- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e; /* Fundo principal escuro */
+            color: #e0e0e0; /* Cor do texto principal (claro) */
+            margin: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Habilita rolagem suave para links de âncora */
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto; 
+            padding: 20px;
+            background-color: #2a2a4a; /* Fundo do conteúdo principal (um pouco mais claro que o body) */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais visível no modo escuro */
+            border-radius: 10px;
+        }
+
+        /* ----------------------------------------------------- */
+        /* 2. ESTILO DO CABEÇALHO */
+        /* ----------------------------------------------------- */
+        .cabecalho-principal {
+            background-color: #0f3460; /* Azul escuro para o topo */
+            text-align: center;
+            padding: 30px 20px;
+            color: white;
+        }
+
+        .cabecalho-principal h1 {
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+
+        .cabecalho-principal h3 {
+            font-size: 1.2em;
+            opacity: 0.9; 
+            margin-bottom: 20px;
+        }
+
+        .fotos-perfil img {
+            max-width: 250px; 
+            border-radius: 30px; 
+            border: 5px solid #4a4a75; /* Borda um pouco mais escura para o modo escuro */
+            margin: 0 10px;
+            transition: transform 0.3s; 
+        }
+
+        .fotos-perfil img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* ----------------------------------------------------- */
+        /* 3. ESTILO DA NAVEGAÇÃO (MENU) */
+        /* ----------------------------------------------------- */
+        .menu-navegacao {
+            background-color: #16213e; /* Fundo do menu mais escuro */
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #0f3460;
+        }
+
+        .menu-navegacao ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Para alinhar os itens do menu lado a lado */
+            justify-content: center; /* Centraliza os itens */
+            flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+        }
+
+        .menu-navegacao li {
+            margin: 0 15px;
+            margin-bottom: 10px; /* Para telas menores, se quebrar a linha */
+        }
+
+        .menu-navegacao a {
+            text-decoration: none;
+            color: #90d4ff; /* Cor clara para os links do menu */
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu-navegacao a:hover {
+            background-color: #0f3460;
+            color: white;
+        }
+
+        /* ----------------------------------------------------- */
+        /* 4. ESTILO DOS TÍTULOS E LISTAS */
+        /* ----------------------------------------------------- */
+        h2 {
+            color: #90d4ff; /* Azul mais claro para os títulos no modo escuro */
+            border-bottom: 2px solid #0f3460; /* Linha de separação escura */
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px; 
+        }
+
+        /* Estilo para a lista de informações básicas */
+        .lista-basica li {
+            padding: 5px 10px;
+            background-color: #3e3e60; /* Fundo dos itens da lista (escuro) */
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        /* Deixa o 'label' em negrito e com cor de destaque */
+        .label {
+            font-weight: bold;
+            color: #c0c0e0; /* Cor mais clara para labels */
+            display: inline-block;
+            width: 200px;
+        }
+        
+        ul:not(.lista-interesses) li {
+            margin-bottom: 10px;
+        }
+        
+        /* ----------------------------------------------------- */
+        /* 5. ESTILO DOS HOBBIES (IMAGENS) */
+        /* ----------------------------------------------------- */
+        .lista-hobbies > li {
+            border-top: 1px dashed #4a4a75; /* Borda dashed mais escura */
+            padding-top: 15px;
+            text-align: left;
+        }
+
+        .galeria-hobby {
+            display: flex;
+            justify-content: center; 
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap; /* Garante que as imagens quebrem linha se necessário */
+        }
+
+        .galeria-hobby img {
+            width: 45%; 
+            max-width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            height: auto;
+        }
+        
+        /* ----------------------------------------------------- */
+        /* 6. ESTILO DA LISTA DE INTERESSES (AGORA COMO LISTA PADRÃO) */
+        /* ----------------------------------------------------- */
+        .lista-interesses {
+            /* Remove o flexbox para que os itens fiquem um abaixo do outro */
+            display: block; 
+            padding: 0;
+            list-style: none; /* Remove bolinhas */
+            margin-bottom: 30px;
+            text-align: left; /* Alinha o texto à esquerda */
+        }
+
+        .lista-interesses li {
+            background-color: #3e3e60; /* Fundo dos itens mais escuro */
+            color: #e0e0e0; /* Cor do texto clara */
+            padding: 10px 15px; 
+            margin: 5px 0; /* Espaço apenas vertical */
+            border-radius: 8px; /* Cantos arredondados */
+            font-size: 1em; 
+            font-weight: normal; /* Normaliza o peso da fonte */
+            border-left: 5px solid #90d4ff; /* Borda colorida à esquerda para destaque */
+        }
+        
+        /* ----------------------------------------------------- */
+        /* 7. ESTILO DOS LINKS SOCIAIS */
+        /* ----------------------------------------------------- */
+        .links-sociais {
+            text-align: center; 
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+
+        .links-sociais a {
+            display: inline-block; 
+            background-color: #007bff; /* Cor padrão para links sem cor específica */
+            color: white; 
+            padding: 12px 25px; 
+            border-radius: 8px; 
+            margin: 10px; 
+            text-decoration: none; 
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .links-sociais a:hover {
+            background-color: #0056b3; 
+            transform: translateY(-2px);
+        }
+
+        /* Cores específicas para as redes sociais */
+        .links-sociais a[href*="instagram"] {
+            background-color: #E1306C;
+        }
+
+        .links-sociais a[href*="whatsapp"] {
+            background-color: #25D366;
+        }
+
+        .links-sociais a i {
+            margin-right: 8px; 
+        }
+
+        /* ----------------------------------------------------- */
+        /* 8. ESTILO DO FORMULÁRIO DE CONTATO */
+        /* ----------------------------------------------------- */
+        .form-contato {
+            max-width: 600px;
+            margin: 20px auto; 
+            padding: 20px;
+            border: 1px solid #4a4a75; /* Borda mais escura */
+            border-radius: 8px;
+            background-color: #2a2a4a; /* Fundo do formulário mais escuro */
+        }
+
+        .form-contato input,
+        .form-contato textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #4a4a75; /* Borda dos campos escura */
+            border-radius: 4px;
+            font-size: 1em;
+            width: 100%; 
+            box-sizing: border-box; 
+            background-color: #1a1a2e; /* Fundo dos campos de input */
+            color: #e0e0e0; /* Cor do texto nos campos */
+        }
+
+        .form-contato label {
+            display: block; 
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #90d4ff; /* Cor clara para labels no formulário */
+        }
+
+        .form-contato button {
+            background-color: #28a745; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer; 
+            transition: background-color 0.3s;
+            font-size: 1.1em;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+        }
+
+        .form-contato button:hover {
+            background-color: #1e7e34;
+        }
+        /* Responsividade básica para imagens de hobbies */
+        @media (max-width: 600px) {
+            .galeria-hobby img {
+                width: 80%; /* Imagens de hobby maiores em telas pequenas */
+            }
+            .links-sociais a {
+                display: block; /* Botões de links sociais um abaixo do outro em telas pequenas */
+                margin: 10px auto;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="cabecalho-principal"> 
+        <h1>OLÁ, EU SOU O JOSÉ NILMAR</h1>
+        <h3>Aqui você encontra algumas informações sobre mim</h3>
+        <div class="fotos-perfil">
+            <img src="C:\Users\caio\Pictures\IMG_0859.jpg" alt="Foto de perfil do Nilmar">
+        </div>
+    </header> 
+
+    <nav class="menu-navegacao">
+        <ul>
+            <li><a href="#informacoes-basicas">Informações Básicas</a></li>
+            <li><a href="#formacoes">Formações</a></li>
+            <li><a href="#interesses-pessoais">Interesses Pessoais</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#redes-sociais">Redes Sociais</a></li>
+            <li><a href="#fale-comigo">Fale Comigo</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <h2 id="informacoes-basicas">INFORMAÇÕES BÁSICAS</h2>
+        <ul class="lista-basica">
+            <li><span class="label">NOME:</span> José Nilmar Silvestre Jacinto</li>
+            <li><span class="label">IDADE:</span> 32 Anos</li>
+            <li><span class="label">LOCAL DE NACIMENTO:</span> Goiânia / Goiás</li>
+            <li><span class="label">RESIDO EM:</span> Aparecida de Goiânia / Goiás</li>
+            <li><span class="label">ESTADO CIVIL:</span> Solteiro</li>
+        </ul>
+
+        <h2 id="formacoes">FORMAÇÕES</h2>
+        <ul>
+            <li><h3>Técnico em Radiologia</h3></li>
+            <li><h3>Técnico em Informática</h3></li>
+            <li><h3>Cursando Desenvolvimento Web e Mobile</h3></li>
+        </ul>
+        
+        <h2 id="interesses-pessoais">INTERESSES PESSOAIS</h2>
+        <ul class="lista-interesses">
+            <li>Desenvolvimento web e mobile</li>
+            <li>Novas Tecnologias</li>
+            <li>Inteligência Artificial</li>
+            <li>Futebol (Palmeiras)</li>
+            <li>Games</li>
+        </ul>
+
+        <h2 id="hobbies">HOBBIES</h2>
+        <ul class="lista-hobbies">
+            
+            <li>
+                <h3>Pilotar e Fazer Imagens e Videos com Drone</h3>
+                <div class="galeria-hobby">
+                    <img src="C:\Users\caio\Pictures\20240322_093137.jpg" alt="Imagem do drone - DJI MINI 2">
+                    <img src="C:\Users\caio\Pictures\dji_fly_.jpg" alt="Foto feita com o drone">
+                </div>
+            </li>
+            
+            <li>
+                <h3>Amante do Som automotivo</h3>
+                <div class="galeria-hobby">
+                    <img src="C:\Users\caio\Pictures\IMG_3314 (1).jpg" alt="Carro de um amigo com som automotivo">
+                    <img src="C:\Users\caio\Pictures\IMG_0647~2.jpg" alt="Meu ex carro com som automotivo">
+                </div>
+            </li>
+            
+            <li>
+                <h3>Apaixonado por Games</h3>
+                <div class="galeria-hobby">
+                    <img src="C:\Users\caio\Pictures\IMG_8701.jpg" alt="PC gamer com jogo de carro na tela">
+                    <img src="C:\Users\caio\Pictures\IMG_3325 (1).jpg" alt="Simulador de carro">
+                </div>
+            </li>
+            
+            <li>
+                <h3>Realidade Virtual</h3>
+                <div class="galeria-hobby">
+                    <img src="C:\Users\caio\Pictures\depositphotos_482821598-stock-photo-man-wearing-virtual-reality-headset.jpg" alt="Homem usando oculos de realidade virtual">
+                    <img src="C:\Users\caio\Pictures\IMG_3322 (2).jpg" alt="Oculos de realidade virtual e alguns jogos">
+                </div>
+            </li>
+            
+        </ul>
+
+        <h2 id="redes-sociais">MINHAS REDES E SITES FAVORITOS</h2>
+        <div class="links-sociais">
+            <a href="https://www.instagram.com/nilmar_js/" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            
+            <a href="https://wa.me/5562984738740" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contato Whatsapp
+            </a>
+        </div>
+        
+        <h2 id="fale-comigo">FALE COMIGO</h2>
+        <form action="#" method="POST" class="form-contato">
+            <label for="nome">Seu Nome:</label>
+            <input type="text" id="nome" name="nome_usuario" required>
+            
+            <label for="email">Seu E-mail:</label>
+            <input type="email" id="email" name="email_usuario" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem_usuario" rows="4" required></textarea>
+            
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+
+    </main>
+</body>
+</html>
