@@ -1,457 +1,145 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil - José Nilmar</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Nilmar - Desenvolvedor Web & Mobile | Portfólio</title>
+    <meta name="description" content="Técnico em Informática apaixonado por IA, desenvolvimento web/mobile e drones. Baseado em Aparecida de Goiânia, GO.">
     <style>
-        /* ----------------------------------------------------- */
-        /* 1. ESTILO GERAL E FUNDO (DARK MODE) */
-        /* ----------------------------------------------------- */
+        /* Modo escuro: Fundo escuro com texto claro */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a2e; /* Fundo principal escuro */
-            color: #e0e0e0; /* Cor do texto principal (claro) */
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: #e0e0e0; /* Texto claro */
             margin: 0;
-            line-height: 1.6;
-            scroll-behavior: smooth; /* Habilita rolagem suave para links de âncora */
-        }
-
-        main {
-            max-width: 900px;
-            margin: 20px auto; 
             padding: 20px;
-            background-color: #2a2a4a; /* Fundo do conteúdo principal (um pouco mais claro que o body) */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais visível no modo escuro */
-            border-radius: 10px;
+            line-height: 1.6;
         }
-
-        /* ----------------------------------------------------- */
-        /* 2. ESTILO DO CABEÇALHO */
-        /* ----------------------------------------------------- */
-        .cabecalho-principal {
-            background-color: #0f3460; /* Azul escuro para o topo */
-            text-align: center;
-            padding: 30px 20px;
-            color: white;
+        header, main, footer {
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        .cabecalho-principal h1 {
-            margin-top: 0;
-            font-size: 2.5em;
+        h1, h2 {
+            color: #ffffff;
         }
-
-        .cabecalho-principal h3 {
-            font-size: 1.2em;
-            opacity: 0.9; 
-            margin-bottom: 20px;
+        section {
+            margin-bottom: 40px;
         }
-
-        .fotos-perfil img {
-            max-width: 250px; 
-            border-radius: 30px; 
-            border: 5px solid #4a4a75; /* Borda um pouco mais escura para o modo escuro */
-            margin: 0 10px;
-            transition: transform 0.3s; 
-        }
-
-        .fotos-perfil img:hover {
-            transform: scale(1.05);
-        }
-        
-        /* ----------------------------------------------------- */
-        /* 3. ESTILO DA NAVEGAÇÃO (MENU) */
-        /* ----------------------------------------------------- */
-        .menu-navegacao {
-            background-color: #16213e; /* Fundo do menu mais escuro */
-            padding: 15px 0;
-            text-align: center;
-            border-bottom: 1px solid #0f3460;
-        }
-
-        .menu-navegacao ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex; 
-            justify-content: center; 
-            flex-wrap: wrap; 
-        }
-
-        .menu-navegacao li {
-            margin: 0 15px;
-            margin-bottom: 10px; 
-        }
-
-        .menu-navegacao a {
-            text-decoration: none;
-            color: #90d4ff; /* Cor clara para os links do menu */
-            font-weight: bold;
-            font-size: 1.1em;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .menu-navegacao a:hover {
-            background-color: #0f3460;
-            color: white;
-        }
-        
-        /* ----------------------------------------------------- */
-        /* 4. ESTILO DOS TÍTULOS E LISTAS */
-        /* ----------------------------------------------------- */
-        h2 {
-            color: #90d4ff; 
-            border-bottom: 2px solid #0f3460; 
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
         ul {
             list-style-type: none;
-            padding-left: 0;
+            padding: 0;
         }
-
         li {
-            margin-bottom: 10px; 
-        }
-
-        /* Estilo para a lista de informações básicas */
-        .lista-basica li {
-            padding: 5px 10px;
-            background-color: #3e3e60; 
-            border-radius: 5px;
-            text-align: left;
-        }
-
-        /* Deixa o 'label' em negrito e com cor de destaque */
-        .label {
-            font-weight: bold;
-            color: #c0c0e0; 
-            display: inline-block;
-            width: 200px;
-        }
-        
-        ul:not(.lista-interesses) li {
             margin-bottom: 10px;
         }
-        
-        /* ----------------------------------------------------- */
-        /* 5. ESTILO DOS HOBBIES (IMAGENS) */
-        /* ----------------------------------------------------- */
-        .lista-hobbies > li {
-            border-top: 1px dashed #4a4a75; 
-            padding-top: 15px;
-            text-align: left;
+        /* Layout responsivo para hobbies: Grid para imagens */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
-
-        .galeria-hobby {
-            display: flex;
-            justify-content: center; 
-            gap: 15px;
-            margin-top: 10px;
-            flex-wrap: wrap; 
-        }
-
-        .galeria-hobby img {
-            width: 45%; 
-            max-width: 280px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            height: auto;
-        }
-        
-        /* ----------------------------------------------------- */
-        /* 6. ESTILO DA LISTA DE INTERESSES */
-        /* ----------------------------------------------------- */
-        .lista-interesses {
-            display: block; 
-            padding: 0;
-            list-style: none;
-            margin-bottom: 30px;
-            text-align: left; 
-        }
-
-        .lista-interesses li {
-            background-color: #3e3e60; 
-            color: #e0e0e0; 
-            padding: 10px 15px; 
-            margin: 5px 0; 
-            border-radius: 8px; 
-            font-size: 1em; 
-            font-weight: normal; 
-            border-left: 5px solid #90d4ff; 
-        }
-        
-        /* ----------------------------------------------------- */
-        /* 7. ESTILO DOS LINKS SOCIAIS */
-        /* ----------------------------------------------------- */
-        .links-sociais {
-            text-align: center; 
-            margin: 30px 0;
-            padding: 0 10px;
-        }
-
-        .links-sociais a {
-            display: inline-block; 
-            background-color: #007bff; 
-            color: white; 
-            padding: 12px 25px; 
-            border-radius: 8px; 
-            margin: 10px; 
-            text-decoration: none; 
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .links-sociais a:hover {
-            background-color: #0056b3; 
-            transform: translateY(-2px);
-        }
-
-        /* Cores específicas para as redes sociais */
-        .links-sociais a[href*="instagram"] {
-            background-color: #E1306C;
-        }
-
-        .links-sociais a[href*="whatsapp"] {
-            background-color: #25D366;
-        }
-
-        .links-sociais a i {
-            margin-right: 8px; 
-        }
-
-        /* ----------------------------------------------------- */
-        /* 8. ESTILO DO FORMULÁRIO DE CONTATO */
-        /* ----------------------------------------------------- */
-        .form-contato {
-            max-width: 600px;
-            margin: 20px auto; 
-            padding: 20px;
-            border: 1px solid #4a4a75; 
-            border-radius: 8px;
-            background-color: #2a2a4a; 
-        }
-
-        .form-contato input,
-        .form-contato textarea {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #4a4a75; 
-            border-radius: 4px;
-            font-size: 1em;
-            width: 100%; 
-            box-sizing: border-box; 
-            background-color: #1a1a2e; 
-            color: #e0e0e0; 
-        }
-
-        .form-contato label {
-            display: block; 
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #90d4ff; 
-        }
-
-        .form-contato button {
-            background-color: #28a745; 
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer; 
-            transition: background-color 0.3s;
-            font-size: 1.1em;
-            margin-top: 10px;
-            display: block;
-            width: 100%;
-        }
-
-        .form-contato button:hover {
-            background-color: #1e7e34;
-        }
-
-        /* ----------------------------------------------------- */
-        /* 9. ESTILO DO RODAPÉ (FOOTER) - NOVO */
-        /* ----------------------------------------------------- */
-        footer {
-            text-align: center; 
-            padding: 30px 0;
-            margin-top: 50px;
-            background-color: #0f3460; 
-            border-top: 1px solid #4a4a75;
-        }
-
-        .alternativa-page {
-            max-width: 800px;
-            margin: 0 auto 30px auto; /* Centraliza e adiciona margem inferior */
+        .hobby-item {
+            background-color: #2a2a2a; /* Card escuro */
             padding: 15px;
-            background-color: #1a1a2e; 
-            border: 1px solid #4a4a75;
             border-radius: 8px;
+            text-align: center;
         }
-
-        .alternativa-page a {
-            color: #90d4ff; 
-            font-weight: bold;
-            text-decoration: none;
-            transition: color 0.3s;
+        .hobby-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
         }
-        
-        .alternativa-page a:hover {
+        /* CTA botão */
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff; /* Azul chamativo */
             color: white;
-            text-decoration: underline;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
         }
-
-        .copyright {
-            color: #c0c0e0; 
-            font-size: 0.9em;
-            margin: 10px 0 0 0;
+        .cta-button:hover {
+            background-color: #0056b3;
         }
-
-        /* Responsividade básica para imagens de hobbies */
+        /* Responsivo */
         @media (max-width: 600px) {
-            .galeria-hobby img {
-                width: 80%; 
-            }
-            .links-sociais a {
-                display: block; 
-                margin: 10px auto;
-                max-width: 250px;
-            }
+            body { padding: 10px; }
+            .hobbies-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <header class="cabecalho-principal"> 
+    <header>
         <h1>OLÁ, EU SOU O JOSÉ NILMAR</h1>
-        <h3>Aqui você encontra algumas informações sobre mim</h3>
-        <div class="fotos-perfil">
-            <img src="imagens/IMG_0859.jpg" alt="Foto de perfil do Nilmar">
-        </div>
-    </header> 
-
-    <nav class="menu-navegacao">
-        <ul>
-            <li><a href="#informacoes-basicas">Informações Básicas</a></li>
-            <li><a href="#formacoes">Formações</a></li>
-            <li><a href="#interesses-pessoais">Interesses Pessoais</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#redes-sociais">Redes Sociais</a></li>
-            <li><a href="#fale-comigo">Fale Comigo</a></li>
-            <li><a href="#versao-html">Versão HTML</a></li>
-            
-            </ul>
-    </nav>
+        <p>Aqui você encontra algumas informações sobre mim</p>
+        <img src="foto-perfil.jpg" alt="Foto de perfil de José Nilmar sorrindo em Goiânia" width="200" height="200">
+    </header>
 
     <main>
-        
-        <h2 id="informacoes-basicas">INFORMAÇÕES BÁSICAS</h2>
-        <ul class="lista-basica">
-            <li><span class="label">NOME:</span> José Nilmar Silvestre Jacinto</li>
-            <li><span class="label">IDADE:</span> 32 Anos</li>
-            <li><span class="label">LOCAL DE NACIMENTO:</span> Goiânia / Goiás</li>
-            <li><span class="label">RESIDO EM:</span> Aparecida de Goiânia / Goiás</li>
-            <li><span class="label">ESTADO CIVIL:</span> Solteiro</li>
-        </ul>
+        <section id="info-basica">
+            <h2>INFORMAÇÕES BÁSICAS</h2>
+            <ul>
+                <li><strong>NOME:</strong> José Nilmar Silvestre Jacinto</li>
+                <li><strong>IDADE:</strong> 32 Anos</li>
+                <li><strong>LOCAL DE NACIMENTO:</strong> Goiânia / Goiás</li>
+                <li><strong>RESIDO EM:</strong> Aparecida de Goiânia / Goiás</li>
+                <li><strong>ESTADO CIVIL:</strong> Solteiro</li>
+            </ul>
+        </section>
 
-        <h2 id="formacoes">FORMAÇÕES</h2>
-        <ul>
-            <li><h3>Técnico em Radiologia</h3></li>
-            <li><h3>Técnico em Informática</h3></li>
-            <li><h3>Cursando Desenvolvimento Web e Mobile</h3></li>
-        </ul>
-        
-        <h2 id="interesses-pessoais">INTERESSES PESSOAIS</h2>
-        <ul class="lista-interesses">
-            <li>Desenvolvimento web e mobile</li>
-            <li>Novas Tecnologias</li>
-            <li>Inteligência Artificial</li>
-            <li>Futebol (Palmeiras)</li>
-            <li>Games</li>
-            <li>Filmes e Séries</li>
-        </ul>
+        <section id="formacoes">
+            <h2>FORMAÇÕES</h2>
+            <ul>
+                <li>Técnico em Radiologia</li>
+                <li>Técnico em Informática</li>
+            </ul>
+        </section>
 
-        <h2 id="hobbies">HOBBIES</h2>
-        <ul class="lista-hobbies">
-            
-            <li>
-                <h3>Pilotar e Fazer Imagens com Drone</h3>
-                <div class="galeria-hobby">
-                    <img src="imagens/20240322_093137.jpg" alt="Imagem do drone - DJI MINI 2">
-                    <img src="imagens/dji_fly_.jpg" alt="Foto feita com o drone">
-                </div>
-            </li>
-            
-            <li>
-                <h3>Som automotivo</h3>
-                <div class="galeria-hobby">
-                    <img src="imagens/IMG_3314 (1).jpg" alt="Carro de um amigo com som automotivo">
-                    <img src="imagens/IMG_0647~2.jpg" alt="Meu ex carro com som automotivo">
-                </div>
-            </li>
-            
-            <li>
-                <h3>Games</h3>
-                <div class="galeria-hobby">
-                    <img src="imagens/IMG_8701.jpg" alt="PC gamer com jogo de carro na tela">
-                    <img src="imagens/IMG_3325 (1).jpg" alt="Simulador de carro">
-                </div>
-            </li>
-            
-            <li>
-                <h3>Realidade Virtual</h3>
-                <div class="galeria-hobby">
-                    <img src="imagens/depositphotos_482821598-stock-photo-man-wearing-virtual-reality-headset.jpg" alt="Homem usando oculos de realidade virtual">
-                    <img src="imagens/IMG_3322 (2).jpg" alt="Oculos de realidade virtual e alguns jogos">
-                </div>
-            </li>
-            
-        </ul>
+        <section id="interesses">
+            <h2>INTERESSES PESSOAIS</h2>
+            <ul>
+                <li>Desenvolvimento web e mobile</li>
+                <li>Novas Tecnologias</li>
+                <li>Inteligência Artificial</li>
+                <li>Futebol (Palmeiras)</li>
+                <li>Games</li>
+                <li>Filmes e Séries</li>
+            </ul>
+        </section>
 
-        <h2 id="redes-sociais"> REDE SOCIAL E CONTATO PESSOAL</h2>
-        <div class="links-sociais">
-            <a href="https://www.instagram.com/nilmar_js/" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            
-            <a href="https://wa.me/5562984738740" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contato Whatsapp
-            </a>
-        </div>
-        
-        <h2 id="fale-comigo">FALE COMIGO</h2>
-        <form action="#" method="POST" class="form-contato">
-            <label for="nome">Seu Nome:</label>
-            <input type="text" id="nome" name="nome_usuario" required>
-            
-            <label for="email">Seu E-mail:</label>
-            <input type="email" id="email" name="email_usuario" required>
-            
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem_usuario" rows="4" required></textarea>
-            
-            <button type="submit">Enviar Mensagem</button>
-        </form>
-
+        <section id="hobbies">
+            <h2>HOBBIES</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <h3>Pilotar e Fazer Imagens com Drone</h3>
+                    <img src="drone-dji-mini-2.jpg" alt="Drone DJI Mini 2 voando sobre paisagem goiana">
+                    <img src="foto-drone.jpg" alt="Foto aérea capturada com drone em Goiás">
+                </div>
+                <div class="hobby-item">
+                    <h3>Som Automotivo</h3>
+                    <img src="carro-amigo-som.jpg" alt="Carro de um amigo equipado com sistema de som automotivo potente">
+                    <img src="meu-ex-carro-som.jpg" alt="Meu antigo carro com instalação de som automotivo customizada">
+                </div>
+                <div class="hobby-item">
+                    <h3>Games</h3>
+                    <img src="pc-gamer.jpg" alt="PC gamer com jogo de corrida na tela, setup iluminado">
+                    <img src="simulador-carro.jpg" alt="Simulador de corrida em tela de PC gamer">
+                </div>
+                <div class="hobby-item">
+                    <h3>Realidade Virtual</h3>
+                    <img src="homem-vr.jpg" alt="Homem usando óculos de realidade virtual em ação">
+                    <img src="oculos-vr-jogos.jpg" alt="Óculos de realidade virtual e embalagens de jogos VR">
+                </div>
+            </div>
+        </section>
     </main>
-    
-    <footer id="versao-html">
-        
-        <div class="alternativa-page">
-            <p>Quer ver a versão do meu código apenas com **HTML simples?**</p>
-            <a href="basico.html" target="_blank">Clique aqui para a versão HTML Básico</a>
-        </div>
 
-        <p class="copyright">
-            &copy; 2025 Direitos Reservados | Desenvolvido por José Nilmar Silvestre Jacinto
-        </p>
+    <footer>
+        <p>Quer entrar em contato? <a href="mailto:seu-email@example.com" class="cta-button">Me mande um e-mail</a> ou <a href="https://github.com/xdevxnilmar" class="cta-button">Veja meu GitHub</a>.</p>
+        <p>&copy; 2025 José Nilmar. Todos os direitos reservados.</p>
     </footer>
 </body>
-</html>
 
+</html>
