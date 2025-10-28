@@ -12,26 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* ----------------------------------------------------- */
-        /* 1. ESTILO GERAL E FUNDO (DARK MODE MELHORADO) */
-        /* ----------------------------------------------------- */
-        
-        /* Habilita rolagem suave */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Reseta básico e define a fonte principal */
         * {
-            box-sizing: border-box; /* Layout mais fácil */
+            box-sizing: border-box; 
             margin: 0;
             padding: 0;
         }
 
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #111827; /* Fundo principal (Cinza-azulado muito escuro) */
-            color: #e5e7eb; /* Cor do texto principal (Cinza claro) */
+            background-color: #111827; 
+            color: #e5e7eb; 
             line-height: 1.6;
         }
 
@@ -39,20 +33,27 @@
             max-width: 900px;
             margin: 20px auto; 
             padding: 20px;
-            background-color: #1f2937; /* Fundo do conteúdo (Ardósia escuro) */
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* Sombra mais profunda */
-            border-radius: 12px; /* Bordas mais suaves */
+            background-color: #1f2937; 
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); 
+            border-radius: 12px; 
         }
 
-        /* ----------------------------------------------------- */
-        /* 2. ESTILO DO CABEÇALHO */
-        /* ----------------------------------------------------- */
         .cabecalho-principal {
-            background-color: #0f172a; /* Azul-ardósia mais escuro */
-            text-align: center;
+            background-color: #0f172a; 
             padding: 40px 20px;
             color: white;
             border-radius: 0 0 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .info-cabecalho {
+            text-align: left;
+            flex: 1;
+            min-width: 300px;
         }
 
         .cabecalho-principal h1 {
@@ -71,8 +72,8 @@
         .fotos-perfil img {
             max-width: 250px; 
             border-radius: 30px; 
-            border: 5px solid #374151; /* Borda no tom médio da paleta */
-            margin: 0 10px;
+            border: 5px solid #374151; 
+            margin: 0;
             transition: transform 0.3s ease; 
         }
 
@@ -80,17 +81,10 @@
             transform: scale(1.05);
         }
         
-        /* ----------------------------------------------------- */
-        /* 3. ESTILO DA NAVEGAÇÃO (MENU) */
-        /* ----------------------------------------------------- */
         .menu-navegacao {
-            background-color: #0f172a; /* Mesmo tom do cabeçalho */
+            background-color: #0f172a; 
             padding: 15px 0;
             text-align: center;
-            /* Stick-top é um efeito legal se quiser que o menu grude no topo ao rolar */
-            /* position: sticky; 
-            top: 0; 
-            z-index: 10; */
         }
 
         .menu-navegacao ul {
@@ -106,8 +100,8 @@
 
         .menu-navegacao a {
             text-decoration: none;
-            color: #90caf9; /* Azul claro para links */
-            font-weight: 500; /* Peso da fonte Inter */
+            color: #90caf9; 
+            font-weight: 500; 
             font-size: 1.1em;
             padding: 8px 12px;
             border-radius: 8px;
@@ -119,27 +113,22 @@
             color: white;
         }
         
-        /* ----------------------------------------------------- */
-        /* 4. SEÇÕES SEMÂNTICAS E TÍTULOS */
-        /* ----------------------------------------------------- */
-        
-        /* Estilo para as novas tags <section> */
         section {
-            margin-bottom: 40px; /* Espaçamento entre seções */
+            margin-bottom: 40px; 
             padding: 10px;
             border-radius: 8px;
         }
 
         h2 {
-            color: #60a5fa; /* Azul vibrante */
-            border-bottom: 2px solid #374151; /* Borda sutil */
+            color: #60a5fa; 
+            border-bottom: 2px solid #374151; 
             padding-bottom: 8px;
             margin-bottom: 20px;
             font-size: 1.8em;
         }
         
         h3 {
-            color: #d1d5db; /* Cinza claro para subtítulos */
+            color: #d1d5db; 
             font-size: 1.3em;
             margin-bottom: 10px;
         }
@@ -153,55 +142,50 @@
             margin-bottom: 10px; 
         }
 
-        /* Estilo para a lista de informações básicas */
         .lista-basica li {
             padding: 10px 15px;
-            background-color: #374151; /* Tom médio */
+            background-color: #374151; 
             border-radius: 8px;
-            display: flex; /* Para alinhar o label e o texto */
-            flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+            display: flex; 
+            flex-wrap: wrap; 
+            transition: background-color 0.3s ease;
         }
 
         .label {
             font-weight: 700;
             color: #d1d5db; 
             display: inline-block;
-            width: 180px; /* Largura fixa para o label */
-            min-width: 180px; /* Garante que não encolha */
+            width: 180px; 
+            min-width: 180px; 
         }
         
-        /* Estilo para a lista de Formações */
         .lista-formacoes li {
             background-color: #374151;
             padding: 12px 15px;
             border-radius: 8px;
             font-weight: 500;
             border-left: 5px solid #60a5fa;
+            transition: background-color 0.3s ease;
         }
         
-        /* ----------------------------------------------------- */
-        /* 5. ESTILO DOS HOBBIES (MELHORADO COM GRID) */
-        /* ----------------------------------------------------- */
         .lista-hobbies > li {
             border-top: 1px dashed #374151; 
             padding-top: 20px;
-            text-align: center; /* Centraliza o h3 */
+            text-align: center; 
         }
 
         .galeria-hobby {
-            /* Usando GRID para um layout robusto e alinhado */
             display: grid;
-            /* Cria colunas automáticas de no mínimo 250px */
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-top: 15px;
         }
 
         .galeria-hobby img {
-            width: 100%; /* Ocupa 100% da célula do grid */
-            height: 100%; /* Ocupa 100% da célula do grid */
-            aspect-ratio: 4 / 3; /* Proporção 4:3 (pode mudar para 16/9) */
-            object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+            width: 100%; 
+            height: 100%; 
+            aspect-ratio: 4 / 3; 
+            object-fit: cover; 
             
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -213,27 +197,29 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
         
-        /* ----------------------------------------------------- */
-        /* 6. ESTILO DA LISTA DE INTERESSES */
-        /* ----------------------------------------------------- */
         .lista-interesses li {
             background-color: #374151; 
             color: #e5e7eb; 
             padding: 10px 15px; 
             margin: 5px 0; 
             border-radius: 8px; 
-            border-left: 5px solid #60a5fa; /* Destaque azul */
+            border-left: 5px solid #60a5fa; 
             font-weight: 500;
+            transition: background-color 0.3s ease;
         }
         
-        /* ----------------------------------------------------- */
-        /* 7. ESTILO DOS LINKS SOCIAIS */
-        /* ----------------------------------------------------- */
+        .lista-basica li:hover,
+        .lista-formacoes li:hover,
+        .lista-interesses li:hover {
+            background-color: #4b5563;
+            cursor: pointer;
+        }
+        
         .links-sociais {
             text-align: center; 
             margin: 30px 0;
             padding: 0 10px;
-            display: flex; /* Flex para centralizar e espaçar */
+            display: flex; 
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
@@ -248,15 +234,14 @@
             font-weight: 700;
             transition: background-color 0.3s, transform 0.2s;
             font-size: 1.1em;
-            min-width: 220px; /* Largura mínima */
+            min-width: 220px; 
         }
 
         .links-sociais a:hover {
-            transform: translateY(-3px); /* Efeito de "levantar" */
+            transform: translateY(-3px); 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Cores específicas */
         .links-sociais a[href*="instagram"] {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
@@ -275,9 +260,6 @@
             margin-right: 10px; 
         }
 
-        /* ----------------------------------------------------- */
-        /* 8. ESTILO DO FORMULÁRIO DE CONTATO */
-        /* ----------------------------------------------------- */
         .form-contato {
             max-width: 600px;
             margin: 20px auto; 
@@ -300,7 +282,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Melhora o foco nos inputs */
         .form-contato input:focus,
         .form-contato textarea:focus {
             outline: none;
@@ -334,14 +315,11 @@
             background-color: #218838;
         }
 
-        /* ----------------------------------------------------- */
-        /* 9. ESTILO DO RODAPÉ (FOOTER) */
-        /* ----------------------------------------------------- */
         footer {
             text-align: center; 
             padding: 40px 20px;
             margin-top: 50px;
-            background-color: #0f172a; /* Mesmo tom do cabeçalho */
+            background-color: #0f172a; 
             border-top: 1px solid #374151;
         }
 
@@ -367,29 +345,37 @@
         }
 
         .copyright {
-            color: #9ca3af; /* Cinza mais sutil */
+            color: #9ca3af; 
             font-size: 0.9em;
             margin: 10px 0 0 0;
         }
 
-        /* ----------------------------------------------------- */
-        /* 10. RESPONSIVIDADE */
-        /* ----------------------------------------------------- */
-        
         @media (max-width: 768px) {
+            .cabecalho-principal {
+                flex-direction: column-reverse;
+                gap: 15px;
+            }
+            .info-cabecalho {
+                text-align: center;
+                flex: auto;
+            }
+            .fotos-perfil {
+                margin-top: 20px;
+            }
+            
             .lista-basica li {
-                flex-direction: column; /* Coloca o label em cima do valor */
+                flex-direction: column; 
                 align-items: flex-start;
             }
             .label {
-                width: auto; /* Remove largura fixa */
+                width: auto; 
                 margin-bottom: 5px;
             }
         }
         
         @media (max-width: 600px) {
             .links-sociais {
-                flex-direction: column; /* Botões um embaixo do outro */
+                flex-direction: column; 
                 gap: 15px;
             }
             .links-sociais a {
@@ -400,12 +386,14 @@
     </style>
 </head>
 <body>
-    <header class="cabecalho-principal"> 
-        <h1>OLÁ, EU SOU O JOSÉ NILMAR</h1>
-        <h3>Desenvolvedor Web e Mobile</h3> 
-        <h3>Aqui você encontra algumas informações sobre mim</h3>
+    <header class="cabecalho-principal">
         <div class="fotos-perfil">
             <img src="imagens/IMG_0859.jpg" alt="Foto de perfil do Nilmar">
+        </div>
+        <div class="info-cabecalho">
+            <h1>OLÁ, EU SOU O JOSÉ NILMAR</h1>
+            <h3>Desenvolvedor Web e Mobile</h3> 
+            <h3>Aqui você encontra algumas informações sobre mim</h3>
         </div>
     </header> 
 
@@ -537,4 +525,3 @@
     </footer>
 </body>
 </html>
-
